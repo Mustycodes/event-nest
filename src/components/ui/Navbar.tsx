@@ -7,13 +7,28 @@ const Navbar = () => {
       <nav className='bg-white border-b border-gray-200 w-full'>
         <div className='mx-auto max-w-7xl px-4 py-2.5 sm:px-6 lg:px-8 flex flex-wrap justify-between items-center'>
           <Link href='/' className='flex items-center'>
-            <img
-              src='https://flowbite.com/docs/images/logo.svg'
-              className='mr-3 h-6 sm:h-9'
-              alt='EventNest Logo'
-            />
-            <span className='self-center text-xl font-semibold whitespace-nowrap'>
-              EventNest
+            <svg
+              fill='none'
+              height='32'
+              viewBox='0 0 40 48'
+              width='24'
+              xmlns='http://www.w3.org/2000/svg'
+            >
+              <g fill='#FFA500' stroke="#FFA500">
+                <path d='m9 8.5c0 2.4853-2.01472 4.5-4.5 4.5s-4.5-2.0147-4.5-4.5c0-2.48528 2.01472-4.5 4.5-4.5s4.5 2.01472 4.5 4.5z' />
+                <path d='m24.5 8.5c0 2.4853-2.0147 4.5-4.5 4.5s-4.5-2.0147-4.5-4.5c0-2.48528 2.0147-4.5 4.5-4.5s4.5 2.01472 4.5 4.5z' />
+                <path d='m40 8.5c0 2.4853-2.0147 4.5-4.5 4.5s-4.5-2.0147-4.5-4.5c0-2.48528 2.0147-4.5 4.5-4.5s4.5 2.01472 4.5 4.5z' />
+                <path d='m9 24c0 2.4853-2.01472 4.5-4.5 4.5s-4.5-2.0147-4.5-4.5 2.01472-4.5 4.5-4.5 4.5 2.0147 4.5 4.5z' />
+                <path d='m24.5 24c0 2.4853-2.0147 4.5-4.5 4.5s-4.5-2.0147-4.5-4.5 2.0147-4.5 4.5-4.5 4.5 2.0147 4.5 4.5z' />
+                <path d='m40 24c0 2.4853-2.0147 4.5-4.5 4.5s-4.5-2.0147-4.5-4.5 2.0147-4.5 4.5-4.5 4.5 2.0147 4.5 4.5z' />
+                <path d='m9 39.5c0 2.4853-2.01472 4.5-4.5 4.5s-4.5-2.0147-4.5-4.5 2.01472-4.5 4.5-4.5 4.5 2.0147 4.5 4.5z' />
+                <path d='m24.5 39.5c0 2.4853-2.0147 4.5-4.5 4.5s-4.5-2.0147-4.5-4.5 2.0147-4.5 4.5-4.5 4.5 2.0147 4.5 4.5z' />
+                <path d='m40 39.5c0 2.4853-2.0147 4.5-4.5 4.5s-4.5-2.0147-4.5-4.5 2.0147-4.5 4.5-4.5 4.5 2.0147 4.5 4.5z' />
+              </g>
+            </svg>
+
+            <span className='ml-3 self-center text-xl font-semibold whitespace-nowrap'>
+              <span className="text-orange-500 font-bold">Event</span><span className="text-gray-600">Nest</span>
             </span>
           </Link>
           <div className='flex items-center lg:order-2'>

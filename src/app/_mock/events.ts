@@ -1,4 +1,6 @@
-export const mockEvents = [
+import { Event } from "@/types/event";
+
+export const mockEvents: Event[] = [
   {
     id: "evt001",
     name: "React Global Summit 2025",

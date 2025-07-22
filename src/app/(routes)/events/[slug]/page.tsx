@@ -1,7 +1,5 @@
-"use client";
-
-import { useState } from "react";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 
 import { mockEvents } from "@/app/_mock/events";
 import SessionList from "@/components/SessionList";
@@ -11,15 +9,15 @@ export default async function SingleEventPage({
 }: {
   params: Promise<{ slug: string }>;
 }) {
-  const [isAddMode, setIsAddMode] = useState(false);
+  // const [isAddMode, setIsAddMode] = useState(false);
   const { slug } = await params;
   const singleEvent = mockEvents.find((event) => event.id === slug);
   if (!singleEvent) {
-    throw new TypeError("Event not found");
+    notFound();
   }
   
   return (
-    <div>
+    <div className="py-6">
       <Link
         href={"/events"}
         className='text-2xl mb-4 inline-block hover:text-gray-400'
@@ -95,7 +93,7 @@ export default async function SingleEventPage({
       </section>
 
       <hr className='my-8 border-orange-500' />
-      <section>
+      {/* <section>
         <div className='grid grid-cols-12 gap-1'>
           <div className='md:col-span-12'>
             <header className='flex justify-between items-center'>
@@ -123,13 +121,13 @@ export default async function SingleEventPage({
                 </button>
               </div>
               <button
-                onClick={() => setIsAddMode(true)}
+                onClick={() => {}}
                 className='text-purple-500'
               >
                 Add Session
               </button>
             </header>
-            {!isAddMode ? (
+            {!true ? (
               <SessionList sessions={[...new Array(6)]} />
             ) : (
               <div>
@@ -138,7 +136,7 @@ export default async function SingleEventPage({
             )}
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 }
