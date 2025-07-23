@@ -9,7 +9,7 @@ export interface EventSession {
 export interface Event {
   id: string;
   name: string;
-  date: string;
+  date: Date;
   time: string;
   price: number;
   imageUrl: string;

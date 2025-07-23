@@ -1,8 +1,9 @@
+import { Event } from "@/types/event";
 import Image from "next/image";
 import Link from "next/link";
 
 interface EventCardProps {
-  event: any;
+  event: Event
 }
 
 const EventCard = ({ event }: EventCardProps) => {
@@ -16,7 +17,7 @@ const EventCard = ({ event }: EventCardProps) => {
           <h4 className='font-semibold text-lg'>{event.name}</h4>
         </Link>
         <p className='text-sm'>
-          {event.date} • {event.time}
+          {event.date.toLocaleDateString()} • {event.time}
         </p>
         <div className='flex items-center justify-between'>
           <p className='text-sm text-gray-500'>{event.organizer}</p>

@@ -1,5 +1,5 @@
 import EventCard from "@/components/EventCard";
-import { mockEvents } from "../_mock/events";
+import { mockEvents } from "../../_mock/events";
 
 export default function Home() {
   return (

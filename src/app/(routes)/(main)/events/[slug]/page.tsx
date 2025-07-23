@@ -87,7 +87,7 @@ export default async function SingleEventPage({
             <p className='text-4xl font-semibold text-purple-300'>
               &#36;{singleEvent.price}
             </p>
-            <p className='text-2xl text-gray-400'>{singleEvent.date}</p>
+            <p className='text-2xl text-gray-400'>{singleEvent.date.toLocaleDateString()}</p>
           </div>
         </div>
       </section>

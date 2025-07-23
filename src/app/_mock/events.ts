@@ -4,7 +4,7 @@ export const mockEvents: Event[] = [
   {
     id: "evt001",
     name: "React Global Summit 2025",
-    date: "2025-08-22",
+    date: new Date("2025-08-22"),
     time: "10:00 AM",
     price: 150,
     imageUrl: "/assets/images/DevFest2.png",
@@ -40,7 +40,7 @@ export const mockEvents: Event[] = [
   {
     id: "evt002",
     name: "Startup Weekend Lagos",
-    date: "2025-09-14",
+    date: new Date("2025-09-14"),
     time: "9:00 AM",
     price: 50,
     imageUrl: "/assets/images/DevFest2.png",
@@ -63,7 +63,7 @@ export const mockEvents: Event[] = [
   {
     id: "evt003",
     name: "Design Systems Bootcamp",
-    date: "2025-10-01",
+    date: new Date("2025-10-01"),
     time: "11:00 AM",
     price: 120,
     imageUrl: "/assets/images/DevFest2.png",
@@ -90,7 +90,7 @@ export const mockEvents: Event[] = [
   {
     id: "evt004",
     name: "Fullstack Developer Meetup",
-    date: "2025-08-18",
+    date: new Date("2025-08-18"),
     time: "6:00 PM",
     price: 0,
     imageUrl: "/assets/images/DevFest2.png",
@@ -116,7 +116,7 @@ export const mockEvents: Event[] = [
   {
     id: "evt005",
     name: "AI for Creators Workshop",
-    date: "2025-09-05",
+    date: new Date("2025-09-05"),
     time: "2:00 PM",
     price: 75,
     imageUrl: "/assets/images/DevFest2019.png",
