@@ -93,6 +93,8 @@ export default async function SingleEventPage({
       </section>
 
       <hr className='my-8 border-orange-500' />
+
+      <SessionList sessions={singleEvent.sessions} />
       {/* <section>
         <div className='grid grid-cols-12 gap-1'>
           <div className='md:col-span-12'>
