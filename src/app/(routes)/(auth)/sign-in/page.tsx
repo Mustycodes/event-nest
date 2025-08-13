@@ -1,25 +1,35 @@
 "use client";
 
+import Link from "next/link";
 import Logo from "@/components/Logo";
 import SocialLoginButton from "@/components/ui/SocialLoginButton";
 import { Apple } from "lucide-react";
-import App from "next/app";
-import Link from "next/link";
-import React from "react";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { useAuth } from "@/context/AuthContext";
 
 const SignInPage = () => {
-  // event: React.ChangeEvent<HTMLInputElement>
-  const handleInputChange = () => {
-    // const { name, value } = event.target;
-    // setLoginData((prevLoginData) => ({
-    //   ...prevLoginData,
-    //   [name]: value,
-    // }));
+  const { login } = useAuth();
+  const router = useRouter();
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
+  const [error, setError] = useState("");
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormData((prevLoginData) => ({ ...prevLoginData, [name]: value }));
+    if (error) setError("");
   };
-  //   event: React.ChangeEvent<HTMLFormElement>
-  const handleSubmit = () => {
-    // event.preventDefault();
-    // console.log(loginData);
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const isLoggedIn = login(formData.email, formData.password);
+    if (!isLoggedIn) {
+      return setError("Username or Password must be incorrect");
+    } 
+    return router.push('/')
   };
   return (
     <section className='bg-gray-100'>
@@ -52,7 +62,7 @@ const SignInPage = () => {
                 <div className='text-center px-5 text-gray-700'>or</div>
                 <div className='w-full h-0.5 bg-gray-300' />
               </div>
-              <form className='space-y-4 md:space-y-6' action='#'>
+              <form className='space-y-4 md:space-y-6' onSubmit={handleSubmit}>
                 <div>
                   <label
                     htmlFor='email'
@@ -65,6 +75,7 @@ const SignInPage = () => {
                     name='email'
                     id='email'
                     className='bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-orange-400 focus:border-orange-600 block w-full p-2.5'
+                    value={formData.email}
                     onChange={handleInputChange}
                   />
                 </div>
@@ -79,8 +90,9 @@ const SignInPage = () => {
                     type='password'
                     name='password'
                     id='password'
-                    // placeholder='••••••••'
                     className='bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-orange-400 focus:border-orange-400 block w-full p-2.5'
+                    value={formData.password}
+                    onChange={handleInputChange}
                   />
                 </div>
                 <div className='flex items-center justify-between'>
@@ -106,6 +118,17 @@ const SignInPage = () => {
                     Forgot password?
                   </a>
                 </div>
+                {error && (
+                  <div
+                    style={{
+                      color: "red",
+                      marginBottom: "15px",
+                      fontSize: "14px",
+                    }}
+                  >
+                    {error}
+                  </div>
+                )}
                 <button
                   type='submit'
                   className='w-full text-white bg-orange-500 hover:bg-orange-600 focus:ring-4 focus:outline-none focus:ring-orange-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center'

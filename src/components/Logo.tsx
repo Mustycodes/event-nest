@@ -8,7 +8,7 @@ const Logo = () => {
         height='32'
         viewBox='0 0 40 48'
         width='24'
-        xmlns='http://www.w3.org/2000/svg'
+        // xmlns='http://www.w3.org/2000/svg'
       >
         <g fill='#FFA500' stroke='#FFA500'>
           <path d='m9 8.5c0 2.4853-2.01472 4.5-4.5 4.5s-4.5-2.0147-4.5-4.5c0-2.48528 2.01472-4.5 4.5-4.5s4.5 2.01472 4.5 4.5z' />
